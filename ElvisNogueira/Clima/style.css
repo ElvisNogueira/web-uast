@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+
+body{
+    background-color:white;
+}
+
+header{
+    background-color: rgb(21, 117, 226);
+    width: 100%;
+    height: 80px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+}
+
+input{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    border: solid 1px gray;
+    text-indent: 10px;
+    font-size: 16px;
+}
+
+
+
+button{
+    width: 18%;
+    height: 36px;
+    border-radius: 5px;
+    background-color:rgb(21, 117, 226);
+    border: solid 1px rgb(21, 117, 226);
+    color: white;
+}
+
+.divCorpo{
+    width: 400px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#card{
+    width: 400px;    
+    background-color: white;
+    text-indent: 5px;
+}
+
+#temperatura{
+    font-size: 50pt;
+    text-align: center;
+    text-indent: 0px;
+    color: gray;
+}
