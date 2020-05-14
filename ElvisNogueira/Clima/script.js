@@ -16,9 +16,9 @@ function buscarCidade(){
         if(ajax.readyState === 4 && ajax.status === 200){
             resultJson = ajax.responseText;
             resultObject = JSON.parse(resultJson);
-            cidade.innerText = resultObject.name;
+            cidade.innerText = resultObject.name.toUpperCase();
             temperatura.innerText = parseInt(resultObject.main.temp)+"ºC";
-            clima.innerText = resultObject.weather[0].description;
+            clima.innerText = resultObject.weather[0].description.toUpperCase();
         }else if(ajax.readyState === 4 && ajax.status === 404){
             alert("Cidade não encontrada! Verifique se o nome dela está escrito corretamente!")
         }
