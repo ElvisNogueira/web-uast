@@ -2,8 +2,9 @@ var campoMin = $("#minInput");
 
 $(function(){
     $("button").on("click", function () {
-        $("#confJogo").hide();
-        $("#areaJogo").show();
+        //$("#confJogo").hide();
+        $("#confJogo").fadeOut();
+        $("#areaJogo").fadeIn();
     });
 
 });

@@ -1,0 +1,80 @@
+@font-face{
+    font-family: AlloyInk;
+
+    /*Caso a fonte esteja na mesma pasta*/
+    src: url("fontes/aAlloyInk.otf");
+}
+
+*{
+    margin: 0px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(31, 115, 184);
+    color: rgb(231, 192, 18);
+    font-family: AlloyInk;
+    font-size: 30pt;
+    text-align: center;
+    padding-top: 40px;    
+}
+
+
+div{
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Helvetica, sans-serif;
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+    padding-right: 10px;
+    color: gray;
+}
+
+button{
+    height: 50px;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(31, 115, 184);
+    color: rgb(253, 208, 5);
+    border-radius: 10px;
+    border: solid gray 1px;
+    font-family: AlloyInk;
+    font-size: 16pt;
+}
+
+
+#confJogo div{
+    display: flex;
+    justify-content: center;
+}
+
+#cronometro{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(31, 115, 184);
+
+}
+
+#areaJogo{
+    display: none;
+}
+
+.camposConf{
+    width: 90px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border:solid rgb(218, 217, 217) 1px;
+    text-indent: 5px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <p>Words Game</p>
+    </header>   
+    
+    <div id="confJogo">
+        <div>
+            <input type="text" id="minInput" class="camposConf" placeholder="Minutos"> :
+            <input type="text" id="segInput" class="camposConf" placeholder="Segundos">
+            <input type="text" id="numPalavrasInput" class="camposConf" placeholder="Num. Palavras">
+            <input type="text" id="numLetrasInput" class="camposConf" placeholder="Num. Letras">
+        </div>
+        <div>
+            <button>Iniciar</button>
+        </div>
+        
+    </div>
+    <div id="areaJogo">
+        <p id="cronometro">00:00</p>
+        <textarea id="cxTexto" cols="73" rows="10"></textarea>
+        <ul>
+            <li>Letras: <output id="letras">0</output></li>
+            <li>Palavras: <output id="letras">0</output></li>
+        </ul>
+    </div> 
+</body>
+</html>
