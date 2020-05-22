@@ -6,32 +6,38 @@
     <title>Words Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 <body>
     <header>
         <p>Words Game</p>
     </header>   
     
-    <div id="confJogo">
-        <div>
-            <input type="text" id="minInput" class="camposConf" placeholder="Minutos"> :
-            <input type="text" id="segInput" class="camposConf" placeholder="Segundos">
-            <input type="text" id="numPalavrasInput" class="camposConf" placeholder="Num. Palavras">
-            <input type="text" id="numLetrasInput" class="camposConf" placeholder="Num. Letras">
+    <div class = "divCentro" id="confJogo">
+        <div class = "divCentro">
+            <input type="number" min="0" max="59" id="minInput" class="camposConf" placeholder="Minutos"> :
+            <input type="number" min="0" max="59" id="segInput" class="camposConf" placeholder="Segundos">
+            <input type="number" min="0" id="numPalavrasInput" class="camposConf" placeholder="Num. Palavras">
+            <input type="number" min="0" id="numLetrasInput" class="camposConf" placeholder="Num. Letras">
         </div>
-        <div>
+        <div class = "divCentro">
             <button>Iniciar</button>
         </div>
         
     </div>
-    <div id="areaJogo">
+    <div  class = "divCentro" id="areaJogo">
         <p id="cronometro">00:00</p>
         <textarea id="cxTexto" cols="73" rows="10"></textarea>
         <ul>
             <li>Letras: <output id="letras">0</output></li>
-            <li>Palavras: <output id="letras">0</output></li>
+            <li>Palavras: <output id="palavras">0</output></li>
         </ul>
     </div> 
+
+    <div id="gameOver">
+        <p>
+            Parabéns Você venceu!
+        </p>
+    </div>
 </body>
 </html>
