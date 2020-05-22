@@ -1,0 +1,88 @@
+@font-face{
+    font-family: AlloyInk;
+
+    /*Caso a fonte esteja na mesma pasta*/
+    src: url("fontes/aAlloyInk.otf");
+}
+
+*{
+    margin: 0px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(31, 115, 184);
+    /*color: rgb(231, 192, 18);*/
+    color: white;
+    font-family: AlloyInk;
+    font-size: 30pt;
+    text-align: center;
+    padding-top: 40px;    
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+    padding-right: 10px;
+    color: gray;
+}
+
+button{
+    height: 50px;
+    width: 40%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(31, 115, 184);
+    /*color: rgb(253, 208, 5);*/
+    color: white;
+    border-radius: 10px;
+    border: solid gray 1px;
+    font-family: AlloyInk;
+    font-size: 20pt;
+}
+
+.txtCentral{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: rgb(31, 115, 184);
+    font-family: Helvetica, sans-serif;
+}
+
+#areaJogo{
+    display: grid; 
+    justify-content: center;
+}
+
+#gameOver{
+    display: none;
+    height: 100%;
+    height: 150px;
+    background-color:rgb(74, 197, 74);
+    border-top: solid green 1px;
+    border-bottom: solid green 1px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    color: white;
+    font-size: 20pt;
+    font-family: AlloyInk;
+    text-align: center;
+
+}
+
+#gameOver p{
+    padding-top: 50px;
+}
+
+.divCentro{
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Helvetica, sans-serif;
+}
+
