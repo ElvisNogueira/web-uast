@@ -1,0 +1,78 @@
+DROP DATABASE IF EXISTS gym_bd;
+CREATE DATABASE gym_bd;
+
+
+create table IF NOT EXISTS endereco(
+	id int PRIMARY KEY AUTO_INCREMENT,
+	uf varchar(2),
+	cidade varchar(100),
+	cep varchar(10),
+	bairro varchar(100),
+	rua varchar(100),
+	numero varchar(8)	
+);
+create table IF NOT EXISTS conta(
+	id int PRIMARY KEY AUTO_INCREMENT,
+	nome varchar(25),
+	tipo varchar(8),
+	descricao varchar(255)
+);
+create table IF NOT EXISTS aluno(
+	id int PRIMARY KEY AUTO_INCREMENT,
+	nome varchar(255),
+	cpf varchar(14),
+	data_nasc date,
+	sexo varchar(10),
+	status boolean,
+	data_venc_pag int,
+	telefone varchar(15),
+	endereco_id int,
+	CONSTRAINT `fk_endereco_id` FOREIGN KEY (endereco_id) REFERENCES endereco (id) on delete cascade
+);
+
+create table IF NOT EXISTS usuario(
+	id int PRIMARY KEY AUTO_INCREMENT,
+	login varchar(50) UNIQUE,
+	senha varchar(50)
+);
+
+create table IF NOT EXISTS funcionario(
+	cpf varchar(14),
+	nome varchar(255),
+	status boolean,
+	cargo varchar(50),
+	salario float,
+	dia_pagamento int,
+	endereco_id int,
+    usuario_id int PRIMARY KEY,
+	CONSTRAINT `fk_endereco_id2` FOREIGN KEY (endereco_id) REFERENCES endereco (id),
+	CONSTRAINT `fk_usuario_id` FOREIGN KEY (usuario_id) REFERENCES usuario (id)
+);
+
+create table financa(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    data DATE,
+    descricao varchar(255),
+    valor float,
+    conta_id int,
+    CONSTRAINT `fk_conta_id` FOREIGN KEY (conta_id) REFERENCES conta (id)
+);
+
+create table mensalidade(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    valor float,
+    desconto float,
+    total float,
+    data_vencimento date,
+    aluno_id int,
+    CONSTRAINT `fk_aluno_id` FOREIGN KEY (aluno_id) REFERENCES aluno (id)
+);
+
+create table pagamento(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    valor float,
+    descricao varchar(255),
+    data date,
+    funcionario_id int,
+    CONSTRAINT `fk_funcionario_id` FOREIGN KEY (funcionario_id) REFERENCES funcionario (usuario_id)
+);
