@@ -5,22 +5,21 @@ namespace GYM\src\model\dao;
 use GYM\src\model\dao\EnderecoDAO;
 use GYM\src\model\vo\AlunoVO;
 
-require "connection.php";
+require_once "connection.php";
 
 class AlunoDAO implements InterfaceDAO
 {
 
     static function create($dado)
     {
-        EnderecoDAO::create($dado->getEndereco());
-        $id_endereco = EnderecoDAO::getLastId();
+        $id_endereco = EnderecoDAO::create($dado->getEndereco());
         $link = getConnection();
 
-        $dado->getEndereco->setId($id_endereco);
+        $dado->setEndereco(EnderecoDAO::getById($id_endereco));
 
         $query = "insert into aluno (nome,cpf ,data_nasc,sexo,status,data_venc_pag ,telefone,endereco_id) values
-                    ('{$dado->getNome()}', '{$dado->getCpf()}','{$dado->getData_nasc()}','{$dado->getSexo()}','{$dado->getStatus()}',
-                    '{$dado->getData_venc_pag()}','{$dado->getTelefone()}','{$dado->getEndereco()->getId()}')";
+                    ('{$dado->getNome()}', '{$dado->getCpf()}','{$dado->getDataNasc()}','{$dado->getSexo()}','{$dado->getStatus()}',
+                    '{$dado->getDataVencPag()}','{$dado->getTelefone()}','{$dado->getEndereco()->getId()}')";
         $link->query($query);
         $link->close();
     }
@@ -53,7 +52,7 @@ class AlunoDAO implements InterfaceDAO
             while ($row = $result->fetch_row()){
                 $link->close();
                 return new AlunoVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],
-                        $row[7],EnderecoDAO::getById($row[8]));
+                    EnderecoDAO::getById($row[8]), $row[7]);
             }
         }
         $link->close();
@@ -68,7 +67,7 @@ class AlunoDAO implements InterfaceDAO
         if ($result = $link->query($query)){
             while ($row = $result->fetch_row()){
                 $alunos []=  new AlunoVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],
-                    EnderecoDAO::getById($row[7]));
+                    EnderecoDAO::getById($row[8]),$row[7]);
             }
         }
         $link->close();

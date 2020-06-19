@@ -10,13 +10,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GYM | Login</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="shortcut icon" href="imagens/Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../public/css/login.css">
+    <link rel="shortcut icon" href="../../public/imagens/Logo1.png" type="image/x-icon">
 </head>
 <body>
     <div id="corpo">
         <div id="logo" class="divLogin">
-            <img src="imagens/1.png" alt="">
+            <img src="../../public/imagens/1.png" alt="">
         </div>
         <div id="login" class="divLogin">
             <form id="camposLogin" method="post">

@@ -3,7 +3,7 @@
 
 namespace GYM\src\model\dao;
 use GYM\src\model\vo\EnderecoVO;
-require "connection.php";
+require_once "connection.php";
 
 class EnderecoDAO implements InterfaceDAO
 {

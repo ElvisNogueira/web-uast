@@ -1,14 +1,8 @@
 <?php
 require __DIR__ . "/../autoload.php";
-use GYM\src\model\vo\EnderecoVO;
-use GYM\src\model\dao\EnderecoDAO;
 
-
-$end = new EnderecoVO(null,"PE","Floresta", "56400-000","DNER", "5",50);
-
-echo EnderecoDAO::create($end);
-
-echo "eita porra";
+use GYM\src\controller\AlunoController;
+use GYM\src\controller\ContaController;
 
 $caminho = $_SERVER["PATH_INFO"];
 $metodo = $_SERVER["REQUEST_METHOD"];
@@ -16,36 +10,49 @@ $metodo = $_SERVER["REQUEST_METHOD"];
 
 if($metodo == "POST"){
     if(isset($_POST['_method'])){
-        $method = $_POST['_method'];
+        $metodo = $_POST['_method'];
     }
 }
 
 switch ($caminho){
     case "/aluno":
-        echo $caminho;
+        $controller = new AlunoController();
+        metodo($controller,$metodo);
+        break;
+    case "/conta":
+        $controller = new ContaController();
+        metodo($controller,$metodo);
         break;
 }
 
 function metodo($controller, $method){
     switch ($method){
         case "POST":
-            //Salvar
+            $controller->store();
+            break;
         case "GET":
 
             if (isset($_GET['action'])){
                 if(isset($_GET["id"])){
-                    //Editar campos
+                    $controller->edit();
                 }else{
-                    //Campos criar
+                    $controller->create();
                 }
             }else{
                 if (isset($_GET["id"])){
-                    //Ver por id
+                    $controller->view();
+                    break;
                 }else{
-                    //Ver todos
+                    $controller->index();
                 }
             }
-
+        break;
+        case "PUT":
+            $controller->update();
+            break;
+        case "DELETE":
+            $controller->delete();
+            break;
     }
 
 }

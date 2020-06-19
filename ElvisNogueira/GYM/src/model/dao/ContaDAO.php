@@ -5,6 +5,7 @@ namespace GYM\src\model\dao;
 
 
 use GYM\src\model\vo\ContaVO;
+require_once "connection.php";
 
 class ContaDAO implements InterfaceDAO
 {
@@ -53,10 +54,9 @@ class ContaDAO implements InterfaceDAO
     {
         $contas = [];
         $link = getConnection();
-        $query = "select * from conta where id = '{$id}'";
+        $query = "select * from conta";
         if($return = $link->query($query)){
             while ($row = $return->fetch_row()){
-                $link->close();
                 $contas [] = new ContaVO($row[0], $row[1], $row[2], $row[3]);
             }
         }
