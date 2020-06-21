@@ -25,6 +25,7 @@ class ContaController implements InterfaceController
     function create()
     {
         require __DIR__ . "/../view/conta/create.php";
+        header("Location: /conta");
     }
 
     function edit()

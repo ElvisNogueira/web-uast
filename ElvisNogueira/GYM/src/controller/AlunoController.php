@@ -5,6 +5,7 @@ namespace GYM\src\controller;
 
 
 use GYM\src\model\dao\AlunoDAO;
+use GYM\src\model\dao\EnderecoDAO;
 use GYM\src\model\vo\AlunoVO;
 use GYM\src\model\vo\EnderecoVO;
 
@@ -56,8 +57,8 @@ class AlunoController implements InterfaceController
         $aluno = new AlunoVO(null,$nome,$cpf,$data_nasc,$sexo,$status,$data_venc_pag,$endereco,$telefone);
 
         AlunoDAO::create($aluno);
-        require __DIR__."/../view/aluno/list.php" ;
 
+        header("Location: /aluno");
     }
 
     function update()
@@ -69,8 +70,16 @@ class AlunoController implements InterfaceController
         $sexo = $_POST['sexo'];
         $status = true;
         $data_venc_pag = $_POST['data_venc_pag'];
-        //Falta pegar o endereco e salvar a edicao
+        $telefone = $_POST['telefone'];
 
+        $aluno_bd = AlunoDAO::getById($id_aluno);
+
+        $aluno_bd->setNome($nome);
+        $aluno_bd->setCpf($cpf);
+        $aluno_bd->setDataNasc($data_nasc);
+        $aluno_bd->setSexo($sexo);
+        $aluno_bd->setDataVencPag($data_venc_pag);
+        $aluno_bd->setTelefone($telefone);
 
         $uf = $_POST['uf'];
         $cidade = $_POST['cidade'];
@@ -78,11 +87,28 @@ class AlunoController implements InterfaceController
         $bairro = $_POST['bairro'];
         $rua = $_POST['rua'];
         $numero = $_POST['numero'];
-        $telefone = $_POST['telefone'];
+
+        $aluno_bd->getEndereco()->setUf($uf);
+        $aluno_bd->getEndereco()->setCidade($cidade);
+        $aluno_bd->getEndereco()->setCep($cep);
+        $aluno_bd->getEndereco()->setBairro($bairro);
+        $aluno_bd->getEndereco()->setRua($rua);
+        $aluno_bd->getEndereco()->setNumero($numero);
+
+
+        AlunoDAO::update($aluno_bd,$aluno_bd->getId());
+        EnderecoDAO::update($aluno_bd->getEndereco(), $aluno_bd->getEndereco()->getId());
+
+        header("Location: /aluno");
+
     }
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id_aluno = $_GET['id'];
+        $aluno = AlunoDAO::getById($id_aluno);
+       AlunoDAO::delete($id_aluno);
+       EnderecoDAO::delete($aluno->getEndereco()->getId());
+       header("Location: /aluno");
     }
 }

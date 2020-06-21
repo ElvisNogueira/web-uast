@@ -12,10 +12,10 @@
 </head>
 <body>
     <h1>Cadastrar aluno</h1>
-    <form action="/aluno?id=<?php echo $aluno->getId();?>" method="post">
-
+    <form action="/aluno?id=<?php echo $aluno->getId();?>" method="POST">
+        <input type="hidden" name="_method" value="PUT">
         <fieldset >
-            <input type="hidden" name="PUT">
+
             <legend>Dados Pessoais</legend>
             <label for="campoNome">Nome: </label>
             <input type="text" name="nome" id="campoNome" value="<?php echo $aluno->getNome();?>">
@@ -89,7 +89,7 @@
             <input type="text" name="numero" id="campoNum" value="<?php echo $aluno->getEndereco()->getNumero();?>">
         </fieldset>
         <br>
-        <button type="submit">Criar</button>
+        <button type="submit">Salvar</button>
     </form>
 </body>
 </html>

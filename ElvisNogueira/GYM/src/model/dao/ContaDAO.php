@@ -50,6 +50,20 @@ class ContaDAO implements InterfaceDAO
         return null;
     }
 
+    static function getByNome($nome)
+    {
+        $link = getConnection();
+        $query = "select * from conta where nome = '{$nome}'";
+        if($return = $link->query($query)){
+            while ($row = $return->fetch_row()){
+                $link->close();
+                return new ContaVO($row[0], $row[1], $row[2], $row[3]);
+            }
+        }
+        $link->close();
+        return null;
+    }
+
     static function getAll()
     {
         $contas = [];

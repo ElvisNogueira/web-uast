@@ -7,17 +7,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//<?php echo $_SERVER['HTTP_HOST']; ?>/css/listStyle.css">
     <title>GYM</title>
 </head>
 <body>
 <h1>Contas</h1>
 <table>
-    <tr>
-        <td>ID</td>
-        <td>NOME</td>
-        <td>TIPO</td>
-        <td>DESCRIÇÃO</td>
-    </tr>
+    <thead>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>TIPO</th>
+        <th>DESCRIÇÃO</th>
+    </thead>
 
     <?php foreach ($contas as $c){ ?>
         <tr>

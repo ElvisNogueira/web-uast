@@ -12,6 +12,7 @@ class AlunoDAO implements InterfaceDAO
 
     static function create($dado)
     {
+        echo "insert";
         $id_endereco = EnderecoDAO::create($dado->getEndereco());
         $link = getConnection();
 
@@ -26,10 +27,11 @@ class AlunoDAO implements InterfaceDAO
 
     static function update($dado, $id)
     {
+        echo "update";
         $link = getConnection();
         $query = "update aluno set nome = '{$dado->getNome()}',cpf = '{$dado->getCpf()}',
-                data_nasc = '{$dado->getData_nasc()}',sexo = '{$dado->getSexo()}',status = '{$dado->getStatus()}',
-                data_venc_pag = '{$dado->getData_venc_pag()}',telefone = '{$dado->getTelefone()}' where id = '{$id}'";
+                data_nasc = '{$dado->getDataNasc()}',sexo = '{$dado->getSexo()}',status = '{$dado->getStatus()}',
+                data_venc_pag = '{$dado->getDataVencPag()}',telefone = '{$dado->getTelefone()}' where id = '{$id}'";
         $link->query($query);
         $link->close();
     }

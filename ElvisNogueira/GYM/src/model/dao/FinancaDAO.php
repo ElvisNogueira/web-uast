@@ -6,6 +6,7 @@ namespace GYM\src\model\dao;
 
 use GYM\src\model\dao\ContaDAO;
 use GYM\src\model\vo\FinancaVO;
+require_once "connection.php";
 
 class FinancaDAO implements InterfaceDAO
 {
@@ -55,7 +56,6 @@ class FinancaDAO implements InterfaceDAO
         $query = "select * from financa";
         if($result = $link->query($query)){
             while ($row = $result->fetch_row()){
-                $link->close();
                 $financas[] = new FinancaVO($row[0],$row[1],$row[2],$row[3],ContaDAO::getById($row[4]));
             }
         }

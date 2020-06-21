@@ -3,6 +3,7 @@ require __DIR__ . "/../autoload.php";
 
 use GYM\src\controller\AlunoController;
 use GYM\src\controller\ContaController;
+use GYM\src\controller\FinancaController;
 
 $caminho = $_SERVER["PATH_INFO"];
 $metodo = $_SERVER["REQUEST_METHOD"];
@@ -11,6 +12,7 @@ $metodo = $_SERVER["REQUEST_METHOD"];
 if($metodo == "POST"){
     if(isset($_POST['_method'])){
         $metodo = $_POST['_method'];
+        echo "O método é ".$metodo;
     }
 }
 
@@ -21,6 +23,10 @@ switch ($caminho){
         break;
     case "/conta":
         $controller = new ContaController();
+        metodo($controller,$metodo);
+        break;
+    case "/financa":
+        $controller = new FinancaController();
         metodo($controller,$metodo);
         break;
 }
