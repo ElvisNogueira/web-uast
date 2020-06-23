@@ -16,9 +16,9 @@ class FuncionarioVO extends UsuarioVO {
      * @param $status
      * @param $cargo
      */
-    public function __construct($cpf, $nome, $salario, $status, $cargo, $login, $senha, $dia_pagamento, $endereco, $id)
+    public function __construct($cpf, $nome, $status, $cargo, $salario, $dia_pagamento, $endereco, $login,$senha,$id)
     {
-        parent::__construct($id, $login, $senha);
+        parent::__construct($login, $senha, $id);
         $this->cpf = $cpf;
         $this->nome = $nome;
         $this->salario = $salario;

@@ -19,7 +19,8 @@ class FinancaController implements InterfaceController
 
     function view()
     {
-        // TODO: Implement view() method.
+        $financa = FinancaDAO::getById($_GET['id']);
+        require __DIR__ . "/../view/financa/view.php";
     }
 
     function create()

@@ -27,7 +27,7 @@ class AlunoDAO implements InterfaceDAO
 
     static function update($dado, $id)
     {
-        echo "update";
+        EnderecoDAO::update($dado->getEndereco(),$dado->getEndereco()->getId());
         $link = getConnection();
         $query = "update aluno set nome = '{$dado->getNome()}',cpf = '{$dado->getCpf()}',
                 data_nasc = '{$dado->getDataNasc()}',sexo = '{$dado->getSexo()}',status = '{$dado->getStatus()}',

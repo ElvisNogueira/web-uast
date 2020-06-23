@@ -2,9 +2,8 @@
 
 
 namespace GYM\src\model\dao;
-
-
 use GYM\src\model\vo\UsuarioVO;
+require_once "connection.php";
 
 class UsuarioDAO implements InterfaceDAO
 {

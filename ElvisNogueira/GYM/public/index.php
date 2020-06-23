@@ -4,6 +4,7 @@ require __DIR__ . "/../autoload.php";
 use GYM\src\controller\AlunoController;
 use GYM\src\controller\ContaController;
 use GYM\src\controller\FinancaController;
+use GYM\src\controller\FuncionarioController;
 
 $caminho = $_SERVER["PATH_INFO"];
 $metodo = $_SERVER["REQUEST_METHOD"];
@@ -28,6 +29,13 @@ switch ($caminho){
     case "/financa":
         $controller = new FinancaController();
         metodo($controller,$metodo);
+        break;
+    case "/funcionario":
+        $controller = new FuncionarioController();
+        metodo($controller,$metodo);
+        break;
+    case "/info":
+        echo phpinfo();
         break;
 }
 
