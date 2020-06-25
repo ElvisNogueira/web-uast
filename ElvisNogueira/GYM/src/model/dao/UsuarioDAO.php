@@ -68,5 +68,22 @@ class UsuarioDAO implements InterfaceDAO
             }
         }
         $link->close();
+
+        return null;
+    }
+
+    static function login($login, $senha){
+        $link = getConnection();
+        $query = "select * from usuario where login='{$login}' and senha='{$senha}'";
+        echo " query: ".$query."   ";
+        if($result = $link->query($query)){
+            echo " Achou ";
+            while ($row = $result->fetch_row()){
+                $link->close();
+                return new UsuarioVO($row[1], $row[2],$row[0]);
+            }
+        }
+        $link->close();
+        return null;
     }
 }

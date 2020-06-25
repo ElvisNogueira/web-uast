@@ -5,8 +5,12 @@ use GYM\src\controller\AlunoController;
 use GYM\src\controller\ContaController;
 use GYM\src\controller\FinancaController;
 use GYM\src\controller\FuncionarioController;
+use GYM\src\controller\LoginController;
 
-$caminho = $_SERVER["PATH_INFO"];
+
+if(($caminho = $_SERVER["PATH_INFO"]) == null){
+    header("Location: /login");
+}
 $metodo = $_SERVER["REQUEST_METHOD"];
 
 
@@ -34,8 +38,13 @@ switch ($caminho){
         $controller = new FuncionarioController();
         metodo($controller,$metodo);
         break;
-    case "/info":
-        echo phpinfo();
+    case "/logout":
+    case "/login":
+        $controller = new LoginController();
+        metodo($controller,$metodo);
+        break;
+    case "/home":
+        require "../src/view/home.php";
         break;
 }
 
@@ -49,6 +58,8 @@ function metodo($controller, $method){
             if (isset($_GET['action'])){
                 if(isset($_GET["id"])){
                     $controller->edit();
+                }else if($_GET['action'] == "logout"){
+                    $controller->logout();
                 }else{
                     $controller->create();
                 }
@@ -66,6 +77,9 @@ function metodo($controller, $method){
             break;
         case "DELETE":
             $controller->delete();
+            break;
+        case "LOGIN":
+            $controller->logar();
             break;
     }
 

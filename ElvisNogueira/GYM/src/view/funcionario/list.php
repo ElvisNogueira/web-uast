@@ -20,6 +20,7 @@
         <th>NOME</th>
         <th>CPF</th>
         <th>CARGO</th>
+        <th colspan="3">AÇÕES</th>
         </thead>
         <?php foreach ($funcionarios as $f){ ?>
             <tr>
@@ -39,7 +40,7 @@
         <?php }?>
     </table>
     <br>
-    <a href="/funcionario?action=create">Novo Funcionario</a>
+    <a href="/funcionario?action=create" id="botaoNovo">Novo Funcionario</a>
 
 </body>
 </html>

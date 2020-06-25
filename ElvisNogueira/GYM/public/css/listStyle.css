@@ -1,28 +1,34 @@
-body{
-    width: 60%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-h1{
-    text-align: center;
-}
-
 table{
+    margin-top: 50px;
     border-collapse: collapse;
-    border: solid 1px black;
     margin-left: auto;
     margin-right: auto;
+    width: 60%;
 }
 
 td{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     padding: 10px;
 }
 
 th{
-    border: 1px solid black;
+    border-top: 1px solid black;
     background-color: #2464c3;
     color: white;
     padding: 10px;
+    text-align: left;
+}
+
+#botaoNovo{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+#botaoApagar{
+    background: red;
+    color: white;
+    height: 24px;
+    border: none;
+    border-radius: 3px;
 }

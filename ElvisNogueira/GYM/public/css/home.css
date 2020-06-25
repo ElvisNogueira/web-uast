@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+}
+
+header{
+    height: 70px;
+    background-color: #2464c3;
+    display: flex;
+}
+
+
+ul{
+    padding-left: 0px;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+a li{
+    background-color: #262525;
+    color: white;
+    padding: 10px;
+    text-indent: 10px;
+    border-bottom: solid 1px #323232;
+}
+
+a li:hover{
+    background-color: cornflowerblue;
+    border-left: solid 4px white;
+}
+
+#logo{
+    width: 30%;
+    min-width: 250px;
+}
+
+#logo img{
+    float: left;
+    padding: 10px;
+}
+
+#txtLogo{
+    float: left;
+    font-size: 50px;
+    color: white;
+    padding: 8px;
+}
+
+#headerBlank{
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 70px;
+}
+#usuario{
+    position: absolute;
+    height: 70px;
+    right: 20px;
+
+}
+
+#usuario img{
+    float: right;
+    padding-top: 20px;
+}
+#usuario p{
+    float: left;
+    padding: 10px;
+    padding-top: 30px;
+    color: white;
+}
+
+#usuario:hover{
+    background-color: cornflowerblue;
+}
+
+#menuLateral{
+    position: fixed;
+    width: 20%;
+    min-height: 550px;
+    background: #262525;
+}
+
+#menuLogout{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    width: 110px;
+}
+
+#corpoPage{
+    width: 80%;
+    float: right;
+}
+
+
+.subMenu li{
+    background-color: #505050;
+    text-indent: 50px;
+}
+
+
+
+

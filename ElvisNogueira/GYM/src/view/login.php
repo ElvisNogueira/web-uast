@@ -1,5 +1,8 @@
 <?php
-
+    session_start();
+    if(isset($_SESSION['nome'])){
+        header("Location: /home");
+    }
 ?>
 
 <!doctype html>
@@ -10,16 +13,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GYM | Login</title>
-    <link rel="stylesheet" href="../../public/css/login.css">
-    <link rel="shortcut icon" href="../../public/imagens/Logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/style.css">
+    <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/login.css">
+    <link rel="shortcut icon" href="//<?php echo $_SERVER["HTTP_HOST"];?>/imagens/Logo1.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div id="corpo">
         <div id="logo" class="divLogin">
-            <img src="../../public/imagens/1.png" alt="">
+            <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/imagens/1.png" alt="">
         </div>
         <div id="login" class="divLogin">
-            <form id="camposLogin" method="post">
+            <h1>GYM</h1>
+            <p>Fazer login</p>
+            <form id="camposLogin" action="/login"
+                  method="post">
+                <input type="hidden" name="_method" value="LOGIN">
                 <input type="text" name="nome" id="campoNome" placeholder="Login">
                 <input type="password" name="senha" id="campoSenha" placeholder="Senha">
                 <button type="submit">Entrar</button>
