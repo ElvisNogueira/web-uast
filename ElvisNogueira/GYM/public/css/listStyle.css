@@ -23,6 +23,7 @@ th{
     position: absolute;
     bottom: 20px;
     right: 20px;
+    cursor: pointer;
 }
 
 #botaoApagar{
@@ -31,4 +32,10 @@ th{
     height: 24px;
     border: none;
     border-radius: 3px;
+
+}
+
+.acaoButton{
+    cursor: pointer;
+    padding-right: 5px;
 }

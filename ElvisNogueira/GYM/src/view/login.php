@@ -20,21 +20,17 @@
 
 </head>
 <body>
-    <div id="corpo">
-        <div id="logo" class="divLogin">
-            <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/imagens/1.png" alt="">
+        <div class="back-opaco">
+            <div id="login" class="divLogin">
+                <h1>GYM</h1>
+                <form id="camposLogin" action="/login"
+                      method="post">
+                    <input type="hidden" name="_method" value="LOGIN">
+                    <input type="text" name="nome" id="campoNome" placeholder="Login">
+                    <input type="password" name="senha" id="campoSenha" placeholder="Senha">
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
         </div>
-        <div id="login" class="divLogin">
-            <h1>GYM</h1>
-            <p>Fazer login</p>
-            <form id="camposLogin" action="/login"
-                  method="post">
-                <input type="hidden" name="_method" value="LOGIN">
-                <input type="text" name="nome" id="campoNome" placeholder="Login">
-                <input type="password" name="senha" id="campoSenha" placeholder="Senha">
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
-    </div>
 </body>
 </html>

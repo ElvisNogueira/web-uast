@@ -74,8 +74,8 @@ a li:hover{
     color: white;
 }
 
-#usuario:hover{
-    background-color: cornflowerblue;
+#usuario img:hover{
+    cursor: pointer;
 }
 
 #menuLateral{
