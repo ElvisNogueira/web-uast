@@ -8,29 +8,51 @@ header{
     display: flex;
 }
 
-
 ul{
+    list-style: none;
     padding-left: 0px;
 }
 
-li{
-    list-style: none;
-}
-a{
+ul li a{
     text-decoration: none;
-}
-
-a li{
-    background-color: #262525;
     color: white;
     padding: 10px;
-    text-indent: 10px;
-    border-bottom: solid 1px #323232;
+    display: block;
+}
+ul li a:hover{
+    background-color: #1c4e98;
+    border-left: solid 5px white;
+    cursor: pointer;
 }
 
-a li:hover{
-    background-color: cornflowerblue;
-    border-left: solid 4px white;
+.menu-expandivel:after{
+    float: right;
+    font-family: fontAwesome;
+    content: "\f078 ";
+}
+
+.menu-expandivel.active:after{
+    content: "\f077 ";
+}
+
+.menu-expandivel.active{
+    background-color: #1c4e98;
+    border-left: solid 5px white;
+}
+.subMenu{
+    display: none;
+    background-color: #494949;
+    width: 100%;
+    text-indent: 30px;
+}
+.sub-lateral.active ul {
+    display: block;
+}
+
+
+
+.subMenu a:hover{
+    background-color: #3f7edb;
 }
 
 #logo{
@@ -60,7 +82,6 @@ a li:hover{
     position: absolute;
     height: 70px;
     right: 20px;
-
 }
 
 #usuario img{
@@ -82,28 +103,38 @@ a li:hover{
     position: fixed;
     width: 20%;
     min-height: 550px;
+    min-width: 155px;
     background: #262525;
+    color: white;
 }
 
 #menuLogout{
     display: none;
+    background-color: #262525;
     position: absolute;
     right: 20px;
     top: 70px;
     width: 110px;
+    height: 80px;
 }
+
+#menuLogout li a:hover{
+    border: none;
+}
+
+#menuLogout.active{
+    display: block;
+    animation-name: descerMenu;
+    animation-duration: 0.5s;
+}
+
 
 #corpoPage{
     width: 80%;
     float: right;
 }
 
-
-.subMenu li{
-    background-color: #505050;
-    text-indent: 50px;
+@keyframes descerMenu {
+    from {height: 0px;}
+    to {height: 80px;}
 }
-
-
-
-

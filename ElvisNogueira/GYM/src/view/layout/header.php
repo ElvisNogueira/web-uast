@@ -16,6 +16,7 @@ if(!isset($_SESSION['nome'])){
     <link rel="stylesheet" href="//<?php echo $_SERVER['HTTP_HOST'];?>/css/home.css">
     <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"]; ?>/css/listStyle.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+
     <script src="//<?php echo $_SERVER['HTTP_HOST'];?>/scripts/jquery.js"></script>
     <script src="//<?php echo $_SERVER['HTTP_HOST'];?>/scripts/homeScript.js"></script>
     <title>GYM | Home</title>
@@ -31,45 +32,59 @@ if(!isset($_SESSION['nome'])){
     </div>
     <ul>
         <li>
-            <div id="usuario">
+            <div id="usuario" >
                 <p>Oi, <?php echo $_SESSION['nome']?>!</p>
                 <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-usuario-homem-30.png" alt="">
             </div>
+            <ul id="menuLogout">
+                <li><a href="">Ver perfil</a></li>
+                <li><a href="/logout?action=logout">Sair</a></li>
+            </ul>
         </li>
-        <ul id="menuLogout">
-            <a href=""><li>Ver perfil</li></a>
-            <a href="/logout?action=logout"><li>Sair</li></a>
-        </ul>
+
     </ul>
 </header>
+
+
 <div id="menuLateral">
     <ul>
+        <li id="alunoMenu" class="sub-lateral" >
+            <a class="menu-expandivel">Alunos</a>
 
-        <a><li id="alunoMenu" class="sub-lateral">Alunos</li></a>
-        <ul  class="subMenu" id="subMenuAluno">
-            <a href="#1"><li>Cadastrar</li></a>
-            <a href="#2"><li>Editar</li></a>
-            <a href="#3"><li>Visualizar</li></a>
-        </ul>
+            <ul  class="subMenu" id="subMenuAluno">
+                <li><a href="#1">Cadastrar</a></li>
+                <li><a href="#2">Editar</a></li>
+                <li><a href="/aluno">Visualizar</a></li>
+            </ul>
+        </li>
 
-        <a><li id="contaMenu">Contas</li></a>
-        <ul  class="subMenu" id="subMenuConta">
-            <a href="#1"><li>Cadastrar</li></a>
-            <a href="#2"><li>Editar</li></a>
-            <a href="#3"><li>Visualizar</li></a>
-        </ul>
-        <a><li id="financaMenu">Finanças</li></a>
-        <ul  class="subMenu" id="subMenuFinanca">
-            <a href="#1"><li>Cadastrar</li></a>
-            <a href="#2"><li>Editar</li></a>
-            <a href="#3"><li>Visualizar</li></a>
-        </ul>
-        <a><li id="funcionarioMenu">Funcionarios</li></a>
-        <ul  class="subMenu" id="subMenuFuncionarios">
-            <a href="#1"><li>Cadastrar</li></a>
-            <a href="#2"><li>Editar</li></a>
-            <a href="#3"><li>Visualizar</li></a>
-        </ul>
-        <a><li>Relatório</li></a>
+
+       <li id="contaMenu" class="sub-lateral">  <a class="menu-expandivel">Contas</a>
+           <ul  class="subMenu" id="subMenuConta">
+               <li><a href="#1">Cadastrar</a></li>
+               <li><a href="#2">Editar</a></li>
+               <li><a href="#3">Visualizar</a></li>
+           </ul>
+       </li>
+
+        <li id="financaMenu" class="sub-lateral">
+            <a class="menu-expandivel">Finanças</a>
+            <ul  class="subMenu" id="subMenuFinanca">
+                <li><a href="#1">Cadastrar</a></li>
+                <li><a href="#2">Editar</a></li>
+                <li><a href="#3">Visualizar</a></li>
+            </ul>
+        </li>
+
+        <li id="funcionarioMenu" class="sub-lateral">
+            <a class="menu-expandivel">Funcionarios</a>
+            <ul  class="subMenu" id="subMenuFuncionarios">
+                <li><a href="#1">Cadastrar</a></li>
+                <li><a href="#2">Editar</a></li>
+                <li><a href="#3">Visualizar</a></li>
+            </ul>
+        </li>
+
+        <li><a>Relatório</a></li>
     </ul>
 </div>

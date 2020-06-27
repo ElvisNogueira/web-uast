@@ -4,7 +4,7 @@
 
 h1{
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: center;
     font-size: 24px;
     color: #2464c3;
@@ -17,7 +17,7 @@ body{
 
 #camposLogin{
     width: 100%;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 #camposLogin *{
@@ -37,13 +37,19 @@ body{
 }
 
 #camposLogin button{
-    border: solid 1px #2464c3;
+    border: none;
     width: 260px;
     background-color: #2464c3;
     color: white;
     justify-content: center;
     border-radius: 5px;
+    cursor: pointer;
 }
+
+#camposLogin button p{
+    padding: 0px;
+}
+
 
 #login{
     background-color: rgba(255,255,255,1);
@@ -56,6 +62,12 @@ body{
 
 }
 
+#login img{
+    width: 50px;
+    float: left;
+
+}
+
 .back-opaco{
     position: fixed;
     top: 0;
@@ -65,3 +77,5 @@ body{
     background: rgba(0,0,0,0.4);
 
 }
+
+
