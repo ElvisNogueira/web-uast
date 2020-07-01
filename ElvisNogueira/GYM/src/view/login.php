@@ -22,7 +22,11 @@
 <body>
         <div class="back-opaco">
             <div id="login" class="divLogin">
-                <h1>GYM</h1>
+                <div class="logo">
+                    <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/logo-branca.png" alt="">
+                    <h1>GYM</h1>
+                </div>
+
                 <form id="camposLogin" action="/login"
                       method="post">
                     <input type="hidden" name="_method" value="LOGIN">

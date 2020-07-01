@@ -3,7 +3,7 @@ table{
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 80%;
 }
 
 td{
@@ -19,10 +19,12 @@ th{
     text-align: left;
 }
 
-#botaoNovo{
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.botaoNovo{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    float: right;
+    margin-right: 10px;
     cursor: pointer;
 }
 

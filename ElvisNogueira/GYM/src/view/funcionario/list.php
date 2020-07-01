@@ -1,19 +1,6 @@
-<?php ?>
+<?php require_once __DIR__."/../layout/header.php"; ?>
 
-<?php ?>
-
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="//<?php echo $_SERVER['HTTP_HOST'];?>/css/listStyle.css">
-    <title>GYM | Funcionarios</title>
-</head>
-<body>
-    <h1>Usuarios</h1>
+<div id="corpoPage">
     <table>
         <thead>
         <th>ID</th>
@@ -28,20 +15,35 @@
                 <td><?php echo $f->getNome();?></td>
                 <td><?php echo $f->getCpf();?></td>
                 <td><?php echo $f->getCargo(); ?></td>
-                <td><a href="/funcionario?id=<?php echo $f->getId();?>">Ver</a></td>
-                <td><a href="/funcionario?action=edit&id=<?php echo $f->getId();?>">Editar</a></td>
+                <td>
+                    <a href="/funcionario?id=<?php echo $f->getId();?>">
+                        <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-visualizar-arquivo-24.png" alt="">
+                    </a>
+                </td>
+                <td>
+                    <a href="/funcionario?action=edit&id=<?php echo $f->getId();?>">
+                        <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-editar-24.png" alt="" >
+                    </a>
+                </td>
                 <td>
                     <form action="/funcionario?id=<?php echo $f->getId();?>" method="post">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit">Apagar</button>
+                        <button type="submit" id="botaoApagar" class="acaoButton">Apagar</button>
                     </form>
                 </td>
             </tr>
         <?php }?>
     </table>
     <br>
-    <a href="/funcionario?action=create" id="botaoNovo">Novo Funcionario</a>
+    <div class="botaoNovo">
+        <a href="/funcionario?action=create" id="botaoNovo">
+            <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-mais-48.png" alt="Adicionar">
+        </a>
 
-</body>
-</html>
+        <div class="tooltip">
+            <div>Novo</div>
+        </div>
+    </div>
+</div>
 
+<?php require_once __DIR__."/../layout/footer.php"?>

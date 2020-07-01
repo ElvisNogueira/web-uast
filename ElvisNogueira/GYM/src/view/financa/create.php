@@ -1,25 +1,18 @@
-<?php ?>
+<?php require_once __DIR__."/../layout/header.php"; ?>
 
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GYM | Cadastrar Finança</title>
-</head>
-<body>
-    <h1>Criar Finança</h1>
+<div id="corpoPage">
+    <h1>Cadastro de Finanças</h1>
     <form action="/financa" method="post">
         <fieldset>
             <legend>Finança</legend>
             <label for="dateCampo">Data: </label>
-            <input type="date" name="data" id="dateCampo">
-            <label for="valorCampo">Valor: R$</label>
-            <input type="text" name="valor" id="valorCampo">
-            <br>
-            <br>
+            <input type="date" name="data" id="dateCampo" placeholder=" ">
+            <div class="label-float">
+                <input type="text" name="valor" id="valorCampo" placeholder=" ">
+                <label for="valorCampo">Valor: R$</label>
+            </div>
+
+            
             <label for="contaCombo">Conta:</label>
             <select name="conta" id="contaCombo">
                 <option value="">Selecione a conta...</option>
@@ -39,5 +32,6 @@
         <br>
         <button type="submit">Criar</button>
     </form>
-</body>
-</html>
+</div>
+
+<?php require_once __DIR__."/../layout/footer.php"?>

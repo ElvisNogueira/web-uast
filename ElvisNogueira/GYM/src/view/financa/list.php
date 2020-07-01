@@ -1,24 +1,14 @@
-<?php ?>
+<?php require_once __DIR__."/../layout/header.php"; ?>
 
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="//<?php echo $_SERVER['HTTP_HOST'];?>/css/listStyle.css">
-    <title>GYM | Finanças</title>
-</head>
-<body>
-<h1>Finanças</h1>
+<div id="corpoPage">
 <table>
     <thead>
         <th>ID</th>
         <th>DATA</th>
-        <th>Valor</th>
+        <th>VALOR</th>
         <th>CONTA</th>
         <th>DESCRICAO</th>
+        <th COLSPAN="3">AÇÕES</th>
     </thead>
 
     <?php foreach ($financas as $f){?>
@@ -28,16 +18,33 @@
             <td>R$ <?php echo $f->getValor();?></td>
             <td><?php echo $f->getConta()->getNome();?></td>
             <td><?php echo $f->getDescricao();?></td>
-            <td><a href="/financa?id=<?php echo $f->getId();?>">Ver</a></td>
-            <td><a href="/financa?action=edit&id=<?php echo $f->getId();?>">Editar</a></td>
+            <td>
+                <a href="/financa?id=<?php echo $f->getId();?>">
+                    <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-visualizar-arquivo-24.png" alt="">
+                </a></td>
+            <td><a href="/financa?action=edit&id=<?php echo $f->getId();?>">
+                    <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-editar-24.png" alt="" >
+                </a>
+            </td>
             <td>
                 <form action="/financa?id=<?php echo $f->getId();?>" method="post">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit">Excluir</button>
+                    <button type="submit" id="botaoApagar" class="acaoButton">Excluir</button>
                 </form></td>
         </tr>
     <?php }?>
 </table>
-<a href="/financa?action=create">Nova Finança</a>
-</body>
-</html>
+
+    <div class="botaoNovo">
+        <a href="/financa?action=create" id="botaoNovo">
+            <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-mais-48.png" alt="Adicionar">
+        </a>
+        <div class="tooltip">
+            <div>Novo</div>
+        </div>
+    </div>
+</div>
+
+
+
+<?php require_once __DIR__."/../layout/footer.php"?>

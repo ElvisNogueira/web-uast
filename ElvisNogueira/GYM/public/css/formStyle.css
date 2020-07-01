@@ -1,0 +1,94 @@
+form{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    padding:10px;
+}
+
+fieldset{
+    border: 1px solid #2464c3;
+    border-radius: 10px;
+}
+
+legend{
+    color: #2464c3;
+}
+
+option{
+    padding: 10px;
+}
+
+.label-float, .select-label{
+    position: relative;
+    padding-top: 13px;
+}
+
+.full-line{
+    width: 80%;
+  }
+.half-line{
+    width: 40%;
+}
+button{
+    float: right;
+    margin-top: 25px;
+    color: white;
+    background-color: #2464c3;
+    border: none;
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+input, textarea, select {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 10px 20px;
+    font-size: 12pt;
+}
+
+.label-float input, textarea, select{
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+}
+
+.label-float input:focus, textarea:focus, select:focus {
+    border: 2px solid #3951b2;
+}
+
+.label-float input::placeholder, textarea::placeholder{
+    color:gray;
+}
+
+.label-float label{
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.label-float input:focus + label,
+.label-float input:not(:placeholder-shown) + label,
+.label-float textarea:focus + label,
+.label-float textarea:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #3951b2;
+}

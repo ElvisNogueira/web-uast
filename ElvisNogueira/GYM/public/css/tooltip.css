@@ -1,0 +1,32 @@
+.tooltip{
+    visibility: hidden;
+    position: absolute;
+    bottom: 20%;
+    left: -150%;
+    padding: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: #262525;
+    color: white;
+}
+
+.botaoNovo:hover .tooltip{
+    visibility: visible;
+}
+
+.acaoButton:hover .tooltip{
+    visibility: visible;
+}
+
+.tooltip:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+

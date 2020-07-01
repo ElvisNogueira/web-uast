@@ -33,8 +33,15 @@
             </tr>
         <?php } ?>
     </table>
-    <a href="/aluno?action=create" id="botaoNovo">
-        <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-mais-48.png" alt="Adicionar">
-    </a>
+    <div class="botaoNovo">
+        <a href="/aluno?action=create" id="botaoNovo">
+            <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-mais-48.png" alt="Adicionar">
+        </a>
+
+        <div class="tooltip">
+            <div>Novo</div>
+        </div>
+    </div>
+
 </div>
 <?php require_once __DIR__."/../layout/footer.php"?>

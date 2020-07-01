@@ -13,7 +13,6 @@ if(($caminho = $_SERVER["PATH_INFO"]) == null){
 }
 $metodo = $_SERVER["REQUEST_METHOD"];
 
-
 if($metodo == "POST"){
     if(isset($_POST['_method'])){
         $metodo = $_POST['_method'];
@@ -54,7 +53,6 @@ function metodo($controller, $method){
             $controller->store();
             break;
         case "GET":
-
             if (isset($_GET['action'])){
                 if(isset($_GET["id"])){
                     $controller->edit();

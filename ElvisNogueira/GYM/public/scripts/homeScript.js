@@ -12,5 +12,17 @@ $(function(){
         $('#menuLogout').toggleClass('active');
     });
 
+    //Modal
+
+    $('#sairButton').click(function () {
+        $('.modal-content').toggleClass('active');
+        $('.modal').toggleClass('active');
+    });
+
+    $('#cancelarButton').click(function () {
+        $('.modal-content').toggleClass('active');
+        $('.modal').toggleClass('active');
+    });
+
 
 });
