@@ -19,9 +19,14 @@ if(!isset($_SESSION['nome'])){
     <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"]; ?>/css/tooltip.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/formStyle.css">
+    <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/viewStyle.css">
+
+    <link rel="shortcut icon" href="//<?php echo $_SERVER["HTTP_HOST"];?>/imagens/Logo1.png" type="image/x-icon">
 
     <script src="//<?php echo $_SERVER['HTTP_HOST'];?>/scripts/jquery.js"></script>
     <script src="//<?php echo $_SERVER['HTTP_HOST'];?>/scripts/homeScript.js"></script>
+    <script src="//<?php echo $_SERVER['HTTP_HOST'];?>/scripts/jquery.mask.js"></script>
+    <script src="//<?php echo $_SERVER['HTTP_HOST'];?>/scripts/formularios.js"></script>
     <title>GYM | Home</title>
 </head>
 <body>

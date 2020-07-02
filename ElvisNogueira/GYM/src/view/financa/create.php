@@ -5,31 +5,30 @@
     <form action="/financa" method="post">
         <fieldset>
             <legend>Finança</legend>
-            <label for="dateCampo">Data: </label>
-            <input type="date" name="data" id="dateCampo" placeholder=" ">
-            <div class="label-float">
-                <input type="text" name="valor" id="valorCampo" placeholder=" ">
-                <label for="valorCampo">Valor: R$</label>
+            <div class="label-top half-line">
+                <label for="dateCampo">Data: </label>
+                <input type="date" name="data" id="dateCampo" >
+            </div>
+            <div class="label-top half-line"">
+                <label for="valorCampo half-line">Valor:</label>
+                <input type="text" name="valor" id="valorCampo" placeholder="R$">
+            </div>
+            <div class="label-top half-line">
+                <label for="contaCombo">Conta:</label>
+                <select name="conta" id="contaCombo">
+                    <option value="">Selecione a conta...</option>
+                    <?php foreach ($contas as $conta){?>
+                        <option value="<?php echo $conta->getNome();?>"><?php echo $conta->getNome();?></option>
+                    <?php }?>
+                </select>
             </div>
 
-            
-            <label for="contaCombo">Conta:</label>
-            <select name="conta" id="contaCombo">
-                <option value="">Selecione a conta...</option>
-                <?php foreach ($contas as $conta){?>
-                    <option value="<?php echo $conta->getNome();?>"><?php echo $conta->getNome();?></option>
-                <?php }?>
-            </select>
-            <br>
-            <br>
-            <label for="descricaoArea">Descrição:</label>
-            <br>
-            <textarea name="descricao" id="descricaoArea" cols="58" rows="10"></textarea>
-
+            <div class="label-top full-line">
+                <label for="descricaoArea">Descrição:</label>
+                <textarea name="descricao" id="descricaoArea" cols="58" rows="10"></textarea>
+            </div>
             
         </fieldset>
-        <br>
-        <br>
         <button type="submit">Criar</button>
     </form>
 </div>

@@ -8,7 +8,6 @@ $(function(){
     });
 
     $('#usuario').click(function () {
-        console.log("aqqqq");
         $('#menuLogout').toggleClass('active');
     });
 

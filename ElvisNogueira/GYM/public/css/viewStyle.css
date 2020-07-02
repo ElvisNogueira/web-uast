@@ -1,0 +1,9 @@
+.viewClass{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.viewClass fieldset p{
+    padding: 5px 10px;
+}
