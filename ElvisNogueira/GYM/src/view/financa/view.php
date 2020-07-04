@@ -1,18 +1,15 @@
-<?php ?>
+<?php require_once __DIR__."/../layout/header.php"; ?>
 
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GYM | Finança</title>
-</head>
-<body>
-    <p>Data: <?php echo $financa->getData();?></p>
-    <p>Conta: <?php echo $financa->getConta()->getNome();?></p>
-    <p>Valor: <?php echo $financa->getValor();?></p>
-    <p>Descrição: <?php echo $financa->getDescricao();?></p>
-</body>
-</html>
+<div id="corpoPage">
+    <form class="viewClass">
+        <fieldset>
+            <legend>Finança</legend>
+            <p><b>Data:</b> <?php echo $financa->getData();?></p>
+            <p><b>Conta:</b> <?php echo $financa->getConta()->getNome();?></p>
+            <p><b>Valor:</b> <?php echo $financa->getValor();?></p>
+            <p><b>Descrição:</b> <?php echo $financa->getDescricao();?></p>
+        </fieldset>
+    </form>
+</div>
+
+<?php require_once __DIR__."/../layout/footer.php"?>

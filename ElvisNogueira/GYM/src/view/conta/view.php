@@ -1,18 +1,12 @@
-<?php ?>
-
-<!doctype html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GYM | View Conta</title>
-</head>
-<body>
-    <h1>Conta</h1>
-    <p>Nome: <?php echo $conta->getNome(); ?></p>
-    <p>Tipo: <?php echo $conta->getTipo(); ?></p>
-    <p>Descrição: <?php echo $conta->getDescricao(); ?></p>
-</body>
-</html>
+<?php require_once __DIR__ ."/../layout/header.php";?>
+<div id="corpoPage">
+    <form class="viewClass">
+        <fieldset>
+            <legend>Conta</legend>
+                <p><b>Nome:</b> <?php echo $conta->getNome(); ?></p>
+                <p><b>Tipo:</b> <?php echo $conta->getTipo(); ?></p>
+                <p><b>Descrição:</b> <?php echo $conta->getDescricao(); ?></p>
+        </fieldset>
+    </form>
+</div>
+<?php require_once __DIR__ ."/../layout/footer.php";?>

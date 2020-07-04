@@ -6,6 +6,8 @@
             <tr>
                 <th>ID</th>
                 <th>NOME</th>
+                <th>CPF</th>
+                <th>SEXO</th>
                 <th colspan="3">AÇÕES</th>
             </tr>
         </thead>
@@ -14,6 +16,8 @@
             <tr>
                 <td><?php echo $a->getId();?></td>
                 <td><?php echo $a->getNome();?></td>
+                <td><?php echo $a->getCpf(); ?></td>
+                <td><?php echo $a->getSexo(); ?></td>
                 <td>
                     <a href="/aluno?id=<?php echo $a->getId(); ?>" class="acaoButton">
                         <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-visualizar-arquivo-24.png" alt="">

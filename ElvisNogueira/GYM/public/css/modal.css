@@ -76,6 +76,10 @@
     color: white;
 }
 
+.modal-cabecalho h1{
+    padding-top: 0px;
+}
+
 #confirmaButton{
     float: left;
     background-color: green;
