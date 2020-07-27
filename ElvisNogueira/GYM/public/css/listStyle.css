@@ -28,17 +28,35 @@ th{
     cursor: pointer;
 }
 
-#botaoApagar{
-    background: red;
+.botoes{
     color: white;
     height: 24px;
     border: none;
     border-radius: 3px;
     margin-top: 0px;
-
+    cursor: pointer;
 }
 
-.acaoButton{
-    cursor: pointer;
-    padding-right: 5px;
+.pagar{
+    background-color: #389c38;
+    float: left;
+}
+
+#botaoApagar{
+    background: red;
+}
+
+
+
+@media only screen and (min-width: 500px){
+    .acaoButton{
+        cursor: pointer;
+        padding-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .acaoButton{
+        padding-right: 5px;
+    }
 }

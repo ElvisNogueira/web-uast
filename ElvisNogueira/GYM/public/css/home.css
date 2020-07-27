@@ -6,7 +6,6 @@ header{
     position: fixed;
     z-index: 1;
     width: 100%;
-    height: 70px;
     background-color: #2464c3;
     display: flex;
 }
@@ -35,7 +34,7 @@ ul li a:hover{
 }
 
 .menu-expandivel.active:after{
-    content: "\f077 ";
+    content: "\f077";
 }
 
 .menu-expandivel.active{
@@ -52,25 +51,12 @@ ul li a:hover{
     display: block;
 }
 
-
-
 .subMenu a:hover{
     background-color: #3f7edb;
 }
 
-#logo{
-    width: 30%;
-    min-width: 250px;
-}
-
-#logo img{
-    float: left;
-    padding: 10px;
-}
-
 #txtLogo{
     float: left;
-    font-size: 50px;
     color: white;
     padding: 8px;
 }
@@ -129,17 +115,175 @@ ul li a:hover{
 #menuLogout.active{
     display: block;
     animation-name: descerMenu;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
 }
 
+#logo img{
+    float: left;
+    padding: 10px;
+}
 
 #corpoPage{
     margin-top: 70px;
-    width: 80%;
-    float: right;
+}
+
+
+@media only screen and (min-width: 500px){
+    .mobile{
+        display: none;
+    }
+    header{
+        height: 70px;
+    }
+
+    #logo{
+        width: 30%;
+        min-width: 250px;
+    }
+
+    #txtLogo{
+        font-size: 50px;
+    }
+
+    #corpoPage{
+        float: right;
+        width: 80%;
+    }
+
+    #imgLogoHome img{
+        width: 125px;
+        float: left;
+        border: solid 5px #2464c3;
+        border-radius: 20px;
+    }
+
+    #imgLogoHome p{
+        position: absolute;
+        font-size: 100pt;
+        right: 0px;
+    }
+
+    #imgLogoHome{
+        clear: both;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 200px;
+        width: 450px;
+        min-width: 350px;
+        color: #2464c3;
+        opacity: 0.5;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    header{
+        z-index: 2;
+        height: 40px;
+    }
+    .menu-bars{
+        cursor: pointer;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .menu-bars p:after{
+        content: "\f0c9";
+        font-family: fontAwesome;
+        font-size: 30px;
+        position: absolute;
+        color: white;
+        right: 10px;
+        top: 5px;
+    }
+    #corpoPage{
+        width: 100%;
+        float: left;
+    }
+
+    #sair a:after{
+        content: "\f08b";
+        font-family: fontAwesome;
+        float: right;
+    }
+
+    #perfil a:after{
+        content: "\f007";
+        font-family: fontAwesome;
+        float: right;
+    }
+
+    #logo{
+        width: 30%;
+        min-width: 150px;
+    }
+
+    #logo img{
+        width: 30px;
+        padding: 5px;
+    }
+
+    #txtLogo{
+        font-size: 25px;
+        padding: 5px;
+    }
+
+    #menuLateral{
+        z-index: 2;
+        width: 60%;
+        top: 40px;
+        left: -60%;
+        animation-name: hide-menu-lateral;
+        animation-duration: 1s;
+    }
+
+    #menuLateral.active{
+        display: block;
+        left: 0px;
+        animation-name: show-menu-lateral;
+        animation-duration: 1s;
+    }
+
+    #imgLogoHome img{
+        width: 50px;
+        float: left;
+        border: solid 2px #2464c3;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+
+    #imgLogoHome p{
+        font-size: 40pt;
+    }
+
+    #imgLogoHome{
+        clear: both;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        width: 200px;
+        min-width: 200px;
+        color: #2464c3;
+        opacity: 0.5;
+    }
 }
 
 @keyframes descerMenu {
     from {height: 0px;}
     to {height: 80px;}
+}
+
+@keyframes show-menu-lateral {
+    from {left: -60%;}
+    to {left: 0px;}
+}
+
+@keyframes hide-menu-lateral {
+    from {left: 0px;}
+    to {left: -60%;}
 }

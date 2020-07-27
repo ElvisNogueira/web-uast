@@ -2,10 +2,12 @@
 require __DIR__ . "/../autoload.php";
 
 use GYM\src\controller\AlunoController;
+use GYM\src\controller\ConfiguracaoController;
 use GYM\src\controller\ContaController;
 use GYM\src\controller\FinancaController;
 use GYM\src\controller\FuncionarioController;
 use GYM\src\controller\LoginController;
+use GYM\src\controller\MensalidadeController;
 
 
 if(($caminho = $_SERVER["PATH_INFO"]) == null){
@@ -45,12 +47,25 @@ switch ($caminho){
     case "/home":
         require "../src/view/home.php";
         break;
+    case "/configuracoes":
+        $controller = new ConfiguracaoController();
+        metodo($controller,$metodo);
+        break;
+    case "/mensalidade":
+        $controller = new MensalidadeController();
+        metodo($controller,$metodo);
+        break;
 }
 
 function metodo($controller, $method){
     switch ($method){
         case "POST":
-            $controller->store();
+            if($_GET['action'] == "pagar"){
+                $controller->pagar();
+            }else{
+                $controller->store();
+            }
+
             break;
         case "GET":
             if (isset($_GET['action'])){
@@ -58,6 +73,8 @@ function metodo($controller, $method){
                     $controller->edit();
                 }else if($_GET['action'] == "logout"){
                     $controller->logout();
+                }else if($_GET['action'] == "perfil") {
+                    $controller->perfil();
                 }else{
                     $controller->create();
                 }

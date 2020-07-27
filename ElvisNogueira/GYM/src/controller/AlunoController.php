@@ -6,11 +6,13 @@ namespace GYM\src\controller;
 
 use GYM\src\model\dao\AlunoDAO;
 use GYM\src\model\dao\EnderecoDAO;
+use GYM\src\model\dao\MensalidadeDAO;
 use GYM\src\model\vo\AlunoVO;
 use GYM\src\model\vo\EnderecoVO;
 
 class AlunoController implements InterfaceController
 {
+    private $controller;
 
     function index()
     {
@@ -21,6 +23,8 @@ class AlunoController implements InterfaceController
     function view()
     {
         $aluno = AlunoDAO::getById($_GET['id']);
+        $mensalidades = MensalidadeDAO::getByIdAluno($_GET['id']);
+
         require __DIR__."/../view/aluno/view.php";
     }
 
@@ -56,9 +60,11 @@ class AlunoController implements InterfaceController
         $endereco = new EnderecoVO(null,$uf,$cidade,$cep,$bairro,$rua,$numero);
         $aluno = new AlunoVO(null,$nome,$cpf,$data_nasc,$sexo,$status,$data_venc_pag,$endereco,$telefone);
 
-        AlunoDAO::create($aluno);
 
-        header("Location: /aluno");
+        AlunoDAO::create($aluno);
+        $idAluno = AlunoDAO::getByLastId()->getId();
+        echo $idAluno;
+       header("Location: /mensalidade?action=create&idAluno=".$idAluno);
     }
 
     function update()

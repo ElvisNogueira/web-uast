@@ -20,6 +20,7 @@ if(!isset($_SESSION['nome'])){
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/formStyle.css">
     <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/viewStyle.css">
+    <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/abaStyle.css">
 
     <link rel="shortcut icon" href="//<?php echo $_SERVER["HTTP_HOST"];?>/imagens/Logo1.png" type="image/x-icon">
 
@@ -43,12 +44,15 @@ if(!isset($_SESSION['nome'])){
     </div>
     <ul>
         <li>
-            <div id="usuario" >
+            <div id="usuario" class="desktop">
                 <p>Oi, <?php echo $_SESSION['nome']?>!</p>
                 <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/icons8-usuario-homem-30.png" alt="">
             </div>
+            <div class="mobile menu-bars">
+                <p></p>
+            </div>
             <ul id="menuLogout">
-                <li><a href="">Ver perfil</a></li>
+                <li><a href="/funcionario?action=perfil&user=<?php echo $_SESSION['nome'];?>">Ver perfil</a></li>
                 <li><a href="#" id="sairButton">Sair</a></li>
             </ul>
         </li>
@@ -90,8 +94,12 @@ if(!isset($_SESSION['nome'])){
                 <li><a href="/funcionario">Visualizar</a></li>
             </ul>
         </li>
-
+        <li><a href="/configuracoes?action=create">Configurações</a></li>
         <li><a>Relatório</a></li>
+        <div class="mobile">
+            <li id="perfil"><a href="/funcionario?action=perfil&user=<?php echo $_SESSION['nome'];?>">Perfil</a></li>
+            <li id="sair"><a>Sair</a></li>
+        </div>
     </ul>
 </div>
 <div class="modal">

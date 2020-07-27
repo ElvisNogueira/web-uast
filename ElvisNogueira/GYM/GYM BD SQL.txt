@@ -64,6 +64,7 @@ create table mensalidade(
     desconto float,
     total float,
     data_vencimento date,
+    status varchar(7),
     aluno_id int,
     CONSTRAINT `fk_aluno_id` FOREIGN KEY (aluno_id) REFERENCES aluno (id)
 );
@@ -76,3 +77,13 @@ create table pagamento(
     funcionario_id int,
     CONSTRAINT `fk_funcionario_id` FOREIGN KEY (funcionario_id) REFERENCES funcionario (usuario_id)
 );
+
+create table configuracao(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    horarioAbertura time,
+    taxaJurosAtrasoMensalidade float,
+    valorMensalidade float
+);
+insert into conta (nome,tipo,descricao) values ('Mensalidade', 'Entrada', 'Mensalidades de alunos');
+
+INSERT INTO `usuario`(`login`, `senha`) VALUES ('root','');

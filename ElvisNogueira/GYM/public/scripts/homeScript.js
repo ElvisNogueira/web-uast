@@ -23,5 +23,16 @@ $(function(){
         $('.modal').toggleClass('active');
     });
 
+    $('.menu-bars').click(function () {
+        $('#menuLateral').toggleClass('active');
+        $('.modal').toggleClass('active');
+    });
+
+    $('#sair').click(function () {
+        $('#menuLateral').toggleClass('active');
+        $('.modal-content').toggleClass('active');
+
+    });
+
 
 });

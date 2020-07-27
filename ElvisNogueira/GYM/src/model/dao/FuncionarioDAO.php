@@ -87,4 +87,5 @@ class FuncionarioDAO implements InterfaceDAO
         $link->close();
         return $funcionarios;
     }
+
 }

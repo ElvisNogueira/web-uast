@@ -1,5 +1,4 @@
 form{
-    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -37,15 +36,7 @@ input[type="radio"]{
     left: 0px;
 }
 
-.full-line{
-    width: 97%;
-    margin-top: 5px;
-}
 
-.half-line{
-    width: 45%;
-    margin-top: 5px;
-}
 
 textarea{
     width: 90%;
@@ -84,5 +75,31 @@ input,textarea,select {
 
 input:focus, textarea:focus, select:focus {
     border: 1px solid #3951b2;
+}
+
+@media only screen and (min-width: 500px){
+    form{
+        width: 60%;
+    }
+
+    .full-line{
+        width: 97%;
+        margin-top: 5px;
+    }
+
+    .half-line{
+        width: 45%;
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    form{
+        width: 90%;
+    }
+    .half-line,.full-line{
+        width: 90%;
+        margin-top: 5px;
+    }
 }
 

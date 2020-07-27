@@ -4,13 +4,16 @@
 namespace GYM\src\controller;
 
 
+use Cassandra\Date;
 use GYM\src\model\dao\FuncionarioDAO;
+use GYM\src\model\dao\UsuarioDAO;
 use GYM\src\model\vo\EnderecoVO;
 use GYM\src\model\vo\FinancaVO;
 use GYM\src\model\vo\FuncionarioVO;
+use GYM\src\model\vo\MensalidadeVO;
 
-class FuncionarioController implements InterfaceController
-{
+class FuncionarioController implements InterfaceController{
+
 
     function index()
     {
@@ -61,6 +64,7 @@ class FuncionarioController implements InterfaceController
         FuncionarioDAO::create($funcionario);
 
 
+
         header("location: /funcionario");
 
     }
@@ -100,5 +104,12 @@ class FuncionarioController implements InterfaceController
         $id = $_GET['id'];
         FuncionarioDAO::delete($id);
         header("location: /funcionario");
+    }
+
+    function perfil(){
+        $login = $_GET['user'];
+        $id = UsuarioDAO::getIdByLogin($login);
+        $funcionario = FuncionarioDAO::getById($id);
+        require __DIR__ . "/../view/perfil.php";
     }
 }

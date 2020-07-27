@@ -1,0 +1,42 @@
+.nav_tabs{
+    width: 80%;
+    margin: 50px auto;
+    background-color: #d94141;
+    position: relative;
+}
+
+.nav_tabs ul li {
+    width: 50%;
+    float: left;
+}
+
+.nav_tabs label{
+    width: 100%;
+    padding: 25px;
+    background-color: white;
+    color: #3f7edb;
+    border: solid 1px #3f7edb;
+    display: block;
+    text-align: center;
+}
+
+.rd_tabs:checked ~ label{
+    background-color: #3f7edb;
+    color: white;
+}
+
+.rd_tabs:checked ~ .content{
+    display: block;
+}
+
+.rd_tabs{
+    display: none;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    display: none;
+    float: left;
+    left: 0px;
+}

@@ -39,6 +39,7 @@ class AlunoDAO implements InterfaceDAO
     static function delete($id)
     {
         $link = getConnection();
+        MensalidadeDAO::deleteByIdAluno($id);
         $query = "delete from aluno where id = '{$id}'";
         $link->query($query);
         $link->close();
@@ -55,6 +56,21 @@ class AlunoDAO implements InterfaceDAO
                 $link->close();
                 return new AlunoVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],
                     EnderecoDAO::getById($row[8]), $row[7]);
+            }
+        }
+        $link->close();
+        return  null;
+    }
+
+    static function getByLastId()
+    {
+        $link = getConnection();
+        $query = "select MAX(id) from aluno";
+
+        if ($result = $link->query($query)){
+            while ($row = $result->fetch_row()){
+                $link->close();
+                return self::getById($row[0]);
             }
         }
         $link->close();

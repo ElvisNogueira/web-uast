@@ -19,7 +19,8 @@ class LoginController implements InterfaceController
             $_SESSION['nome'] = $result->getLogin();
             header("Location: /home");
         }else{
-            echo "\n\n\nErro ao logar";
+            $_SESSION['login'] = 'error';
+            header("Location: /login");
         }
     }
 

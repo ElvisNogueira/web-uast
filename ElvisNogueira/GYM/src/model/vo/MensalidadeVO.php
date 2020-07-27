@@ -5,7 +5,7 @@ namespace GYM\src\model\vo;
 use GYM\src\model\vo\AlunoVO;
 
 class MensalidadeVO{
-    private $id, $valor, $desconto, $total, $aluno, $data_vencimento;
+    private $id, $valor, $desconto, $total, $aluno, $data_vencimento, $status;
 
     /**
      * MensalidadeVO constructor.
@@ -16,7 +16,7 @@ class MensalidadeVO{
      * @param $aluno
      * @param $data_vencimento
      */
-    public function __construct($id, $valor, $desconto, $total, $aluno, $data_vencimento)
+    public function __construct($id, $valor, $desconto, $total, $aluno, $data_vencimento, $status)
     {
         $this->id = $id;
         $this->valor = $valor;
@@ -24,6 +24,7 @@ class MensalidadeVO{
         $this->total = $total;
         $this->aluno = $aluno;
         $this->data_vencimento = $data_vencimento;
+        $this->status = $status;
     }
 
     /**
@@ -121,6 +122,24 @@ class MensalidadeVO{
     {
         $this->data_vencimento = $data_vencimento;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+
 
 
 

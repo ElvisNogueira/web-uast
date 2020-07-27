@@ -23,10 +23,17 @@
         <div class="back-opaco">
             <div id="login" class="divLogin">
                 <div class="logo">
-                    <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/logo-branca.png" alt="">
+                    <img src="//<?php echo $_SERVER['HTTP_HOST'];?>/imagens/logo-traco-azul-transparente-sem-borda.png" alt="">
                     <h1>GYM</h1>
                 </div>
+                <?php if(isset($_SESSION['login'])){?>
+                    <div class="msgErroLogin">
+                        <p>Login e/ou senha incorretos!</p>
+                    </div>
 
+                <?php unset($_SESSION['login']);}
+
+                ?>
                 <form id="camposLogin" action="/login"
                       method="post">
                     <input type="hidden" name="_method" value="LOGIN">

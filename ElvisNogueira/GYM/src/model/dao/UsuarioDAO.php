@@ -72,6 +72,17 @@ class UsuarioDAO implements InterfaceDAO
         return null;
     }
 
+    static function getIdByLogin($login){
+        $link = getConnection();
+        $query = "select id from usuario where login='{$login}'";
+        if($result = $link->query($query)){
+            while ($row = $result->fetch_row()){
+                $link->close();
+                return $row[0];
+            }
+        }
+    }
+
     static function login($login, $senha){
         $link = getConnection();
         $query = "select * from usuario where login='{$login}' and senha='{$senha}'";
@@ -86,4 +97,6 @@ class UsuarioDAO implements InterfaceDAO
         $link->close();
         return null;
     }
+
+
 }
